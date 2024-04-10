@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda Telefónica con Cola</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" href="./imagenes/contactos.png" type="">
+
+</head>
+<body>
+    <div class="encabezado"> <img src="./imagenes/descarga-L4ed-56-y-transformed.png" alt=""></div>
+    <div class="container">
+        <h1>Agenda Telefónica con Cola</h1>
+        <div>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre">
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido">
+            <label for="telefono">Teléfono:</label>
+            <input type="text" id="telefono">
+            <button onclick="agregarContacto()">Agregar Contacto</button>
+            <p id="mensaje"></p> <!-- Aquí se mostrará el mensaje -->
+        </div>
+        <div>
+            <button onclick="extraerContacto()">Extraer Contacto</button>
+            <button onclick="mostrarTodosContactos()">Mostrar Todos los Contactos</button> <!-- Nuevo botón -->
+        </div>
+        <div id="cola"></div>
+        <div id="todosLosContactos"></div> <!-- Nuevo elemento para mostrar todos los contactos -->
+    </div>
+
+    <div id="pie_pagina">
+        <h1>
+          ©HUGO FRANCISCO LUIS INCLAN 2024 CONVERSOR DE NOTACION INFIJA A PREFIJA. DERECHOS RESERVADOS. UNIVERSIDAD POLITECNICA DE CHIAPAS.
+        </h1>
+      </div>
+
+    <script type="module" src="./src/controllers/index.js"></script>
+</body>
+</html>
