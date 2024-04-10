@@ -1,4 +1,3 @@
-// Implementación de la cola utilizando una lista enlazada simple
 export class Queue {
     constructor() {
         this.head = null;

@@ -21,7 +21,6 @@ export class Agenda {
         const size = this.queue.getSize();
         const contactos = [];
 
-        // Creamos una copia de la cola
         const copiaCola = new Queue();
         for (let i = 0; i < size; i++) {
             const contacto = this.queue.dequeue();
@@ -29,11 +28,31 @@ export class Agenda {
             copiaCola.enqueue(contacto);
         }
 
-        // Restauramos la cola original
         for (let i = 0; i < size; i++) {
             this.queue.enqueue(copiaCola.dequeue());
         }
 
         return contactos;
+    }
+
+    buscarContactoPorNombre(nombre) {
+        const size = this.queue.getSize();
+        const contactosEncontrados = [];
+    
+        const copiaCola = new Queue();
+        for (let i = 0; i < size; i++) {
+            const contacto = this.queue.dequeue();
+            const nombreContacto = contacto.split(':')[0].trim();
+            if (nombreContacto.includes(nombre)) {
+                contactosEncontrados.push(contacto);
+            }
+            copiaCola.enqueue(contacto);
+        }
+    
+        for (let i = 0; i < size; i++) {
+            this.queue.enqueue(copiaCola.dequeue());
+        }
+    
+        return contactosEncontrados;
     }
 }
